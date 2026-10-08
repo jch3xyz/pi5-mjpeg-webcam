@@ -1,0 +1,12 @@
+[Unit]
+Description=Pi Camera MJPEG Stream
+After=network.target
+
+[Service]
+# run as root so you don't need sudo in the script
+ExecStart=/usr/local/bin/start-camera-stream.sh
+Restart=always
+WorkingDirectory=/usr/local/bin
+
+[Install]
+WantedBy=multi-user.target
